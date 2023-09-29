@@ -6,13 +6,35 @@ if (typeof window !== "undefined") {
 }
 
 export const subscribeToPushNotifications = async () => {
-  let sw = await navigator.serviceWorker.ready;
-  let push = await sw.pushManager.subscribe({
-    userVisibleOnly: true,
-    applicationServerKey:
-      "BAUGdgClt838d3nHA7k1ncse9lHrl0dTRoODP0YFW2cYxxNVBnMW-ZdnOPYPQeF67kggwfMKelvOAPOXGExVRNI",
-  });
-  console.log(JSON.stringify(push));
+  if (!("Notification" in window)) {
+    console.log(window);
+    console.log("This browser does not support notifications");
+    return;
+  }
+
+  const permission = await Notification.requestPermission();
+
+  switch (permission) {
+    case "granted":
+      const sw = await navigator.serviceWorker.ready;
+      const push = await sw.pushManager.subscribe({
+        userVisibleOnly: true,
+        applicationServerKey:
+          "BK2lrcufME7pLJtPvQ_pmzSTnxBtOrYMcp0WxXez6dFoNMa6dSLGke3vR3VhAbB13v3EVv8XoAbwlyIkOoaEwRE",
+      });
+      window.alert(JSON.stringify(push));
+      console.log("Subscription successful:", JSON.stringify(push));
+      break;
+    case "denied":
+      window.alert("Notification permission denied");
+      break;
+    case "default":
+      window.alert("Notification permission has not been set yet");
+      break;
+    default:
+      window.alert("Unexpected notification permission state:", permission);
+      break;
+  }
 };
 
 export default function App({ Component, pageProps }) {
