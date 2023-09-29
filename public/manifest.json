@@ -1,0 +1,14 @@
+{
+  "short_name": "Website",
+  "name": "My Amazing Website",
+  "start_url": "/",
+  "display": "standalone",
+  "icons": [
+    {
+      "src": "assets/images/icon-36x36.png",
+      "sizes": "36x36",
+      "type": "image/png",
+      "density": "0.75"
+    }
+  ]
+}
