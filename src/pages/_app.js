@@ -20,7 +20,7 @@ export const subscribeToPushNotifications = async () => {
       const push = await sw.pushManager.subscribe({
         userVisibleOnly: true,
         applicationServerKey:
-          "BK2lrcufME7pLJtPvQ_pmzSTnxBtOrYMcp0WxXez6dFoNMa6dSLGke3vR3VhAbB13v3EVv8XoAbwlyIkOoaEwRE",
+          "BAUGdgClt838d3nHA7k1ncse9lHrl0dTRoODP0YFW2cYxxNVBnMW-ZdnOPYPQeF67kggwfMKelvOAPOXGExVRNI",
       });
       window.alert(JSON.stringify(push));
       console.log("Subscription successful:", JSON.stringify(push));

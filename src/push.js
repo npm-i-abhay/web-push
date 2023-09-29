@@ -14,12 +14,11 @@ push.setVapidDetails(
 
 let sub = {
   endpoint:
-    "https://fcm.googleapis.com/fcm/send/dqHvbM18w8c:APA91bH2jPujBZczNYnppJb8LD4_FGw5G6ujDSI7uBc-mSr3qxhvDedrTAcPaHyTB4be3JAb0rwvLtzEcJLuSNeBwgjxlessTWoKrvQb_DQ-a0WxIo-pi89mwEZsRZaDtK8S-DPLrYmE",
-  expirationTime: null,
+    "https://web.push.apple.com/QHU2lO_5MFu87Pq7G46UkddO8ht_gLVZS3Od4_3TfMgOEwlV6XqZcFtRauKEvhTC-YVpyNvxyHsliaO8qeY9EgN0yNpbsVmqb-PcDSEPsZY_hiW-A6IRXH1_9QlX9Uza4vVVaZh3YxyBYB5psUZtMQWk5CFXFkeek712tfvs6bg",
   keys: {
     p256dh:
-      "BJntP1HrdDejqUP3jUUWuxfxKFc4PLp_IP2AELgjxzAv4skPFTLHMwBVaJW1a0z7SYtCB-Tx60qXKGWRUeOICD8",
-    auth: "EAaRDMgOWB76Mkff-wDRKw",
+      "BIIyRzLcYMVVDJjmaOq7oe7b_TpMdvz6ArV-jR2UwtDR-4IFO9J5MAJirY8tP5vHycmCDTJP43q91Exhis9XB6Y",
+    auth: "wEu3oMQffgtN9YJGt7FKig",
   },
 };
 push.sendNotification(sub, "test message");
